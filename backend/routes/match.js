@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 
     res.json(scored.slice(0, 3));
   } catch (err) {
-    console.error("❌ Match Error:", err);
+    console.error(" Match Error:", err);
     res.status(500).json({ message: "Server error" });
   }
 });
