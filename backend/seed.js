@@ -7,15 +7,15 @@ dotenv.config();
 
 mongoose.connect(process.env.DB_URI)
   .then(() => {
-    console.log("✅ MongoDB connected for seeding...");
+    console.log(" MongoDB connected for seeding...");
     const data = JSON.parse(fs.readFileSync("./data/neighborhoods.json", "utf-8"));
     return Neighborhood.insertMany(data);
   })
   .then(() => {
-    console.log("🌱 Seeding complete!");
+    console.log(" Seeding complete!");
     process.exit();
   })
   .catch((err) => {
-    console.error("❌ Error seeding data:", err);
+    console.error(" Error seeding data:", err);
     process.exit(1);
   });
